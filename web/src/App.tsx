@@ -1,9 +1,14 @@
 import React from 'react';
-import Button from './components/Button';
+
+import ExperienceBar from './components/ExperienceBar';
+
+import * as S from './styles/app';
 
 function App() {
   return (
-    <Button />
+    <S.Container>
+      <ExperienceBar />
+    </S.Container>
   );
 }
 

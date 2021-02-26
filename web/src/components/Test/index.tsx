@@ -2,8 +2,8 @@ import React from 'react';
 
 import * as S from './styles';
 
-const Button: React.FC = () => {
+const Test: React.FC = () => {
   return <S.Container />;
 }
 
-export default Button;
+export default Test;
