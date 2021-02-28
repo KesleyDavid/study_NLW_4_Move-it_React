@@ -4,9 +4,9 @@ import * as S from './styles';
 
 const Base: React.FC = () => {
   return (
-    <S.Header>
+    <S.Container>
       <h1>Base</h1>
-    </S.Header>
+    </S.Container>
   );
 }
 
