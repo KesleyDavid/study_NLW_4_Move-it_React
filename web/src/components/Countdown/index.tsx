@@ -2,19 +2,22 @@ import React, { useState, useEffect } from 'react';
 
 import * as S from './styles';
 
+// Saber formato exato do timeout countdown
+let countdownTimeout: NodeJS.Timeout;
+
 const Countdown: React.FC = () => {
   const [time, setTime] = useState(25 * 60); // 25 minutes
-  const [active, setActive] = useState(false);
+  const [isActive, setIsActive] = useState(false);
   
   // 1 - O que será feito (function)
   // 2 - Quando quero executar (changed active and time)
   useEffect(() => {
-    if (active && time > 0) {
-      setTimeout(() => {
+    if (isActive && time > 0) {
+      countdownTimeout = setTimeout(() => {
         setTime(time - 1);
       }, 1000);
     }
-  }, [active, time]);
+  }, [isActive, time]);
 
   const minutes = Math.floor(time / 60); // Arredonda para baixo
   const seconds = time % 60; // Resto da divisão
@@ -25,7 +28,14 @@ const Countdown: React.FC = () => {
   const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('');
 
   function startCountdown() {
-    setActive(true);
+    console.log('start');
+    setIsActive(true);
+  }
+
+  function resetCountdown() {
+    console.log('reset');
+    clearTimeout(countdownTimeout);
+    setIsActive(false);
   }
 
   return (
@@ -44,10 +54,12 @@ const Countdown: React.FC = () => {
 
       <S.Button
         type="button"
-        onClick={startCountdown}
+        onClick={ isActive ? resetCountdown : startCountdown }
+        propActive={ isActive }
       >
-        Iniciar um cliclo
+        { isActive ? 'Abandonar ciclo' : 'Iniciar um ciclo' }
       </S.Button>
+      
     </S.Container>
   );
 }

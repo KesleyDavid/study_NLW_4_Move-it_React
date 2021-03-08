@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
 
@@ -59,8 +59,8 @@ export const Button = styled.button`
   border: 0;
   border-radius: 5px;
 
-  background: var(--blue);
-  color: var(--white);
+  background: ${({propActive}) => propActive ? 'var(--white)' : 'var(--blue)'};
+  color: ${({propActive}) => propActive ? 'var(--title)' : 'var(--white)'};
 
   font-size: 1.25remm;
   font-weight: 600;
@@ -68,6 +68,15 @@ export const Button = styled.button`
   transition: background-color 0.2s;
 
   &:hover {
-    background: var(--blue-dark);
+    /* background: var(--blue-dark); */
+    background: ${({propActive}) => propActive ? 'var(--red)' : 'var(--blue-dark)'};
+    color: ${({propActive}) => propActive ? 'var(--white)' : 'var(--white)'};
   }
+
+  /* .active */
+  /* ${({ propActive }) => propActive && css`
+    background: var(--white);
+    color: var(--title);
+  `} */
+
 `;
