@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 
 import * as S from './styles';
 
-// Saber formato exato do timeout countdown
+// Know exact format of timeout countdown
 let countdownTimeout: NodeJS.Timeout;
 
 const Countdown: React.FC = () => {
   const [time, setTime] = useState(25 * 60); // 25 minutes
   const [isActive, setIsActive] = useState(false);
   
-  // 1 - O que será feito (function)
-  // 2 - Quando quero executar (changed active and time)
+  // 1 - What will be done (function)
+  // 2 - When I want to run (changed active and time)
   useEffect(() => {
     if (isActive && time > 0) {
       countdownTimeout = setTimeout(() => {
@@ -19,11 +19,11 @@ const Countdown: React.FC = () => {
     }
   }, [isActive, time]);
 
-  const minutes = Math.floor(time / 60); // Arredonda para baixo
-  const seconds = time % 60; // Resto da divisão
+  const minutes = Math.floor(time / 60); // rounded down
+  const seconds = time % 60; // Rest of Division
 
-  // split => divide em varios caracteres
-  // padStart => se string não tiver 2 caracteres adiciona o '0' antes
+  // split => split into multiple characters
+  // padStart => if string doesn't have 2 characters add '0' before
   const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('');
   const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('');
 
@@ -57,7 +57,7 @@ const Countdown: React.FC = () => {
         onClick={ isActive ? resetCountdown : startCountdown }
         propActive={ isActive }
       >
-        { isActive ? 'Abandonar ciclo' : 'Iniciar um ciclo' }
+        { isActive ? 'Abandon cycle' : 'Start a cycle' }
       </S.Button>
       
     </S.Container>

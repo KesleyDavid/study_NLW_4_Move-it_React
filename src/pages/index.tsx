@@ -12,7 +12,7 @@ export default function Home() {
     <S.Container>
 
       <Head>
-        <title>Inicio | movie.it</title>
+        <title>Home | movie.it</title>
       </Head>
 
       <ExperienceBar />

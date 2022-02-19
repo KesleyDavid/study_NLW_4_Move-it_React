@@ -11,7 +11,7 @@ export const ContainerTime = styled.div`
   font-weight: 600;
   color: var(--title);
 
-  /* Sempre primeira DIV */
+  /* Always first DIV */
   & > div {
     flex: 1;
     display: flex;
@@ -24,22 +24,22 @@ export const ContainerTime = styled.div`
     text-align: center;
   }
 
-  /* Todo SPAN dentro da primeira DIV */
+  /* All SPAN within the first DIV */
   & > div span{
     flex: 1;
   }
 
-  /* Primeiro SPAN dentro da primeira DIV */
+  /* First SPAN within the first DIV */
   & > div span:first-child{
     border-right: 1px solid #f0f1f3;
   }
 
-  /* Último SPAN dentro da primeira DIV */
+  /* Last SPAN within the first DIV */
   & > div span:last-child{
     border-left: 1px solid #f0f1f3;
   }
 
-  /* Sempre primeiro SPAN */
+  /* Always spa first */
   & > span{
     font-size: 6.25rem;
     margin: 0 0.5rem;

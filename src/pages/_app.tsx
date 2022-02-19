@@ -1,5 +1,5 @@
-// Componentes comum a toda aplicação
-// Toda vez que usuário acessa alguma página, é carregado e renderizado novamente
+// Components common to every application
+// Every time the user accesses some page, it is loaded and rendered again
 
 import GlobalStyle from '../styles/global';
 

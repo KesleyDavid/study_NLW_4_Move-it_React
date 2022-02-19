@@ -1,4 +1,4 @@
-// Carrega uma ÚNICA vez quando usuário visita a aplicação
+// Load SINGLE time when user visits application
 
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
@@ -12,9 +12,9 @@ export default class MyDocument extends Document {
           <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@600&display=swap" rel="stylesheet" />
         </Head>
         <body>
-          {/* Aplicação e páginas */}
+          {/* Application and pages */}
           <Main /> 
-          {/* Scripts que o next injeta na aplicação */}
+          {/* Scripts that next injects into the application */}
           <NextScript />
         </body>
       </Html>

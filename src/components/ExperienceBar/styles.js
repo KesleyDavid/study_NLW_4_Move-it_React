@@ -25,7 +25,7 @@ export const Div = styled.div`
   span {
     position: absolute;
     top: 12px;
-    // Deslocamento centro do componente (metade de seu tamanho) para centro
+    /* Component center offset (half its size) to center */
     transform: translateX(-50%);
   }
 `; 
